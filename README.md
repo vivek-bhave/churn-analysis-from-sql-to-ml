@@ -1,4 +1,4 @@
-### Churn Analysis from SQL to ML
+## Churn Analysis from SQL to ML
 
 ## Problem Statement
 Customer churn describes the breakdown of the relationship between a customer and a company.
