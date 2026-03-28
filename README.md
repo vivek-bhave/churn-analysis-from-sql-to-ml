@@ -1,3 +1,5 @@
+## churn-analysis-from-sql-to-ml
+
 ## Problem Statement
 Customer churn describes the breakdown of the relationship between a customer and a company.
 When customers start leaving, it directly impacts the company’s revenue and growth. It also increases customer acquisition cost (the investment required to bring new customers) and reduces customer lifetime value (the total expected revenue from a customer over time).
