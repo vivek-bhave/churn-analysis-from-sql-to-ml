@@ -14,6 +14,7 @@ The idea is to see how each method contributes to understanding the problem, and
 
 ## Approach
 1. Basic SQL  amd Numerical analysis
+    a.Descriptive Analysis
 2. Graphical Analysis
 3. Statistical Analysis
 4. Classical Interpretable ML Analysis
