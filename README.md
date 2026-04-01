@@ -1,34 +1,68 @@
-## Churn Analysis from SQL to ML
+## Churn Analysis: From SQL to Understanding to ML
 
-## Problem Statement
-Customer churn describes the breakdown of the relationship between a customer and a company.
-When customers start leaving, it directly impacts the company’s revenue and growth. It also increases customer acquisition cost (the investment required to bring new customers) and reduces customer lifetime value (the total expected revenue from a customer over time).
+### Problem Statement
 
-Because of this, it becomes important to understand *why* customers are leaving before directly looking for solutions.
+Customer churn is not just a metric — it reflects the point where the relationship between a customer and a company begins to break.
 
-In this project, the focus is not only on prediction, but on understanding the problem from different perspectives.
-I will explore this using multiple approaches, including SQL-based analysis, numerical and graphical analysis, statistical insights, and finally interpretable machine learning models such as Logistic Regression and Decision Trees.
+When customers leave, the impact is not limited to lost revenue. It increases acquisition costs and weakens long-term value.
+Because of this, predicting churn is useful, but understanding *why it happens* is more important.
 
-The idea is to see how each method contributes to understanding the problem, and where machine learning provides deeper insight beyond simple analysis.
+This project approaches churn as a behavioral problem rather than only a predictive task.
 
+Instead of directly building models, the analysis begins by exploring how customer behavior changes across different conditions, identifying where noticeable shifts in churn occur.
 
-## Approach
-1. Basic SQL  amd Numerical analysis
-    - Behavioral Feature Analysis for Churn
-        - The important Features are 
-            1. Support Calls
-            2. Payment Delay
-            3. Total Spend
-            4. Contract Length
-            5. Last Interaction 
-            6. Gender
+The goal is to move step by step:
+from observation → to structured understanding → to validated learning through machine learning.
 
-2. Graphical Analysis
-3. Statistical Analysis
-4. Classical Interpretable ML Analysis
+---
 
-## Dataset
-The dataset contains customer-related features such as age, tenure, usage frequency, support calls, subscription type, and churn status.
+### Approach
 
-Target variable:
-- Churn (whether the customer left or not)
+1. **SQL-Based Behavioral Analysis**
+
+   * Identifying patterns in churn across different features
+   * Detecting thresholds where customer behavior shifts
+   * Constructing meaningful groupings based on churn patterns
+
+   Key features identified:
+
+   * Support Calls
+   * Payment Delay
+   * Total Spend
+   * Contract Length
+   * Last Interaction
+   * Gender
+
+2. **Graphical Analysis**
+
+   * Visualizing trends and validating observed patterns
+
+3. **Statistical Analysis**
+
+   * Checking whether observed differences are consistent and meaningful
+
+4. **Interpretable Machine Learning**
+
+   * Using models like Logistic Regression and Decision Trees
+   * Understanding feature importance and decision boundaries
+   * Validating whether earlier insights hold under a learning framework
+
+---
+
+### Dataset
+
+The dataset includes customer-level behavioral and demographic features such as:
+
+* Age
+* Tenure
+* Usage Frequency
+* Support Calls
+* Payment Delay
+* Subscription Type
+* Contract Length
+* Total Spend
+* Last Interaction
+
+**Target Variable:**
+
+* Churn (1 = customer left, 0 = customer stayed)
