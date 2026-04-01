@@ -14,7 +14,15 @@ The idea is to see how each method contributes to understanding the problem, and
 
 ## Approach
 1. Basic SQL  amd Numerical analysis
-    - Descriptive Analysis
+    - Behavioral Feature Analysis for Churn
+        - The important Features are 
+            1. Support Calls
+            2. Payment Delay
+            3. Total Spend
+            4. Contract Length
+            5. Last Interaction 
+            6. Gender
+
 2. Graphical Analysis
 3. Statistical Analysis
 4. Classical Interpretable ML Analysis
