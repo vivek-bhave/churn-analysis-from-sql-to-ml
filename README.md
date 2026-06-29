@@ -6,15 +6,19 @@ This project analyzes customer churn patterns in a telecommunications dataset of
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
+```
 CHURN-ANALYSIS-FROM-SQL-TO-ML/
+│
 ├── Data/
-│   ├── Cleaned/
-│   │   └── customer_churn_dataset.csv
-│   └── Raw/
-│       ├── customer_churn_dataset-testing-master.csv
-│       └── customer_churn_dataset-training-master.csv
+│   ├── Raw/
+│   │   ├── customer_churn_dataset-training-master.csv
+│   │   └── customer_churn_dataset-testing-master.csv
+│   │
+│   └── Cleaned/
+│       └── customer_churn_dataset.csv
+│
 ├── Notebooks/
 │   ├── 01_Data_cleaning.ipynb
 │   ├── 02_SQL_Analysis.ipynb
@@ -22,10 +26,10 @@ CHURN-ANALYSIS-FROM-SQL-TO-ML/
 │   ├── 04_Statistical_Validation.ipynb
 │   ├── 05_Logistic_Regression_analysis.ipynb
 │   └── 06_Decision_tree_analysis.ipynb
+│
 ├── Business_Recommendation.md
 └── README.md
-
----
+```
 
 ## Key Findings
 
