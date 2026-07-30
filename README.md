@@ -152,6 +152,7 @@ The workflow included:
 Built a baseline interpretable classification model.
 
 - For example, The percentage missclassification of non-churning(False positive) result.
+
 | Feature | Customer Segment | False Positives (%) |
 |---------|------------------|--------------------:|
 | **Contract Length** | Annual | 10.67% |
