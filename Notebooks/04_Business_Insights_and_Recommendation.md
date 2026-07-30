@@ -1,10 +1,10 @@
 # Business Recommendations
 
-The customer churn analysis identified two distinct customer profiles based on **Spending Level**, each requiring a different retention strategy. While the primary churn drivers (High Issues, High Payment Delay, and Monthly Contract) are common across customer groups, the recommended business interventions differ according to customer lifetime value and expected return on investment.
+The customer churn analysis identified two distinct customer profiles based on **customer business value**, each requiring a different retention strategy. While the primary churn drivers (High Issues, High Payment Delay, and Monthly Contract) are common across customer groups, the recommended business interventions differ according to customer lifetime value and expected return on investment.
 
 ---
 
-# 1. Retention Strategy for Low-Value Profile Customers (Low Spend)
+# 1. Retention Strategy for Low Business-Value Customers
 
 ## High-Risk Segment 1
 
@@ -84,9 +84,9 @@ These customers have not yet accumulated severe service issues. Therefore, proac
 
 ---
 
-# 2. Retention Strategy for High-Value Profile Customers (High Spend)
+# 2. Retention Strategy for High Business-Value Customers
 
-Unlike low-value customers, high-value customers generate substantially greater customer lifetime value. Therefore, investing in personalized and proactive retention strategies is economically justified.
+Unlike low business-value customers, high business-value customers generate substantially greater customer lifetime value. Therefore, investing in personalized and proactive retention strategies is economically justified.
 
 ## High-Risk Customer Profiles
 
@@ -143,16 +143,16 @@ The objective is to protect customer lifetime value rather than relying primaril
 
 * **Threshold Analysis (SQL):** Support Call (≤ 4) and Payment Delay (≥ 508) thresholds provide operational trigger points for proactive retention.
 * **Logistic Regression:** High Issues, High Payment Delay, and Monthly Contract remained statistically significant predictors of churn.
-* **Segment Analysis:** High Spend customers with High Issues and High Payment Delay formed one of the highest-risk churn segments. Additionally, High Spend customers on Monthly Contracts exhibited elevated churn rates, demonstrating that high spending alone does not guarantee long-term customer commitment.
+* **Segment Analysis:** High Spend customers with High Issues and High Payment Delay formed one of the highest-risk churn segments. Additionally, High Spend customers on Monthly Contracts exhibited elevated churn rates, demonstrating that high customer value alone does not guarantee long-term customer commitment.
 * **Statistical Validation:** Chi-Square Test and Cramer's V confirmed statistically significant associations between Spending Level, Contract Length, Issue Level, Payment Delay, and churn.
 
 ---
 
 # Overall Business Strategy
 
-The analysis suggests that customer retention should be **segmented by customer value rather than applying a single strategy to all customers.**
+The analysis suggests that customer retention should be **segmented by customer business value rather than applying a single strategy to all customers.**
 
-* **Low-Value Customers:** Focus on scalable, low-cost automated interventions and commitment-building incentives before customers enter high-risk behavioral thresholds.
-* **High-Value Customers:** Prioritize proactive issue resolution, personalized customer engagement, premium retention programs, and conversion from monthly to long-term subscription plans to maximize customer lifetime value.
+* **Low Business-Value Customers:** Focus on scalable, low-cost automated interventions and commitment-building incentives before customers enter high-risk behavioral thresholds.
+* **High Business-Value Customers:** Prioritize proactive issue resolution, personalized customer engagement, premium retention programs, and conversion from monthly to long-term subscription plans to maximize customer lifetime value.
 
 By integrating threshold-based early warning systems, statistical validation, customer segmentation, and predictive modeling insights, organizations can implement targeted retention campaigns that optimize both customer satisfaction and business profitability.
