@@ -61,7 +61,7 @@
 ### Random Forest
 - Achieved **2.89% higher Accuracy**, **5.01% higher Recall**, and **1.95% higher ROC-AUC** than 4 Featured Tree based models.
 - Captured higher churning customers than all 4 featured models 
-- Has lower False positives compared to all 4 featured models 
+- Has lower False Negatives compared to all 4 featured models 
 
 
 ### XGBoost
