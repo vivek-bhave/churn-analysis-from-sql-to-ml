@@ -2,10 +2,24 @@
 
 Customer churn prediction is often approached as a machine learning problem, but selecting the most suitable model also depends on business priorities. This project follows an end-to-end data science workflow, beginning with SQL-based customer behavior analysis, followed by business-driven feature engineering, statistical validation, and predictive modeling. Instead of selecting a model based only on predictive performance, the models are evaluated based on their ability to balance the loss of high business-value customers against the cost of applying retention strategies to misclassified low business-value customers.
 
-## Business Value Definition
+## Customer Profile and Behavioral Segmentation
 
-For this analysis, customer business value is defined using multiple customer characteristics. **High business-value customers** are those with High Spend, Annual/Quarterly Contract Length, Premium/Standard Subscription Type, Medium/High Tenure, High Usage Frequency, and Low Last Interaction. Conversely, **low business-value customers** are characterized by Low Spend, Monthly Contract Length, Basic Subscription Type, Low/Very Low Tenure, Low Usage Frequency, and High Last Interaction.
+For this analysis, customer business value is defined using customer profile characteristics. **High business-value customers** are those with High Spend, Annual/Quarterly Contract Length, Premium/Standard Subscription Type, and Medium/High Tenure. Conversely, **low business-value customers** are characterized by Low Spend, Monthly Contract Length, Basic Subscription Type, and Low/Very Low Tenure.
 
+Customer behavior is evaluated separately using behavioral characteristics. **Lower-risk behavioral states**, which are suitable for **proactive engagement**, are characterized by Low/Medium Issues and Payment Delay, High Usage Frequency, and Low Last Interaction. **High-risk behavioral states**, which require **reactive engagement**, are characterized by High Issues and Payment Delay, Low Usage Frequency, and High Last Interaction.
+
+### Engagement Framework
+
+The combination of customer business value and behavioral state determines the appropriate engagement strategy:
+
+| Customer Segment | Behavioral State | Recommended Engagement |
+|---|---|---|
+| **High Business Value** | Lower-Risk | High-value proactive engagement |
+| **High Business Value** | High-Risk | High-value reactive engagement |
+| **Low Business Value** | Lower-Risk | Low-cost proactive engagement |
+| **Low Business Value** | High-Risk | Low-cost reactive engagement |
+
+> **Customer profile determines the business value and level of resources justified, while customer behavior determines whether proactive or reactive engagement is appropriate.**
 ## Why This Project?
 
 Customer churn can significantly impact a company's revenue, especially when high business-value customers leave the platform. While machine learning models can predict churn, selecting the best model is not simply a matter of achieving the highest accuracy. Different prediction errors have different business consequences.

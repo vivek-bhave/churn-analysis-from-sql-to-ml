@@ -1,0 +1,25 @@
+# Virtual environments
+.venv
+.venv-deploy
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code settings
+.vscode/
+
+# Git metadata
+.git/
+.gitignore
+
+# Jupyter notebooks
+Notebooks/
+
+# Images used in README/documentation
+Images/
+
+# OS files
+.DS_Store
+Thumbs.db

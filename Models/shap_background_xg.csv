@@ -1,0 +1,101 @@
+Issue_Level,Delay_Level,Spend_Level,Contract Length,Age_Group,LI_Level,Tenure_Level,UF_Level,Gender,Subscription Type
+Low Issues,Low Delay,High Spend,Annual,Old Adult,Low LI,Medium Tenure,High UF,Female,Premium
+Medium Issues,Low Delay,High Spend,Quarterly,Old Adult,High LI,High Tenure,High UF,Male,Standard
+Low Issues,Low Delay,High Spend,Quarterly,Old Adult,Low LI,High Tenure,Low UF,Male,Premium
+Low Issues,High Delay,Low Spend,Monthly,Old,High LI,High Tenure,High UF,Female,Premium
+Medium Issues,Low Delay,High Spend,Quarterly,Old,Low LI,High Tenure,High UF,Male,Basic
+High Issues,High Delay,High Spend,Annual,Old,High LI,Medium Tenure,High UF,Male,Basic
+Low Issues,Low Delay,Low Spend,Annual,Old Adult,High LI,Medium Tenure,High UF,Female,Standard
+High Issues,Low Delay,Low Spend,Annual,Old,Low LI,High Tenure,High UF,Female,Standard
+High Issues,Low Delay,Low Spend,Monthly,Young Adult,High LI,High Tenure,High UF,Female,Standard
+Low Issues,Low Delay,High Spend,Annual,Young Adult,High LI,Very Low Tenure,Low UF,Male,Premium
+Low Issues,Medium Delay,High Spend,Monthly,Old Adult,High LI,Medium Tenure,High UF,Female,Standard
+Low Issues,Low Delay,High Spend,Annual,Old,High LI,Low Tenure,Low UF,Female,Basic
+Low Issues,Low Delay,High Spend,Quarterly,Young Adult,Low LI,Medium Tenure,High UF,Male,Basic
+Low Issues,Low Delay,High Spend,Annual,Old Adult,Low LI,High Tenure,High UF,Female,Standard
+Medium Issues,Medium Delay,High Spend,Monthly,Old,Low LI,High Tenure,High UF,Male,Standard
+Low Issues,Medium Delay,High Spend,Annual,Young Adult,Low LI,High Tenure,High UF,Male,Standard
+Low Issues,Medium Delay,High Spend,Monthly,Old,Low LI,High Tenure,High UF,Female,Standard
+High Issues,High Delay,High Spend,Annual,Old,High LI,High Tenure,Low UF,Female,Premium
+High Issues,Medium Delay,Low Spend,Quarterly,Old,Low LI,High Tenure,High UF,Male,Standard
+High Issues,High Delay,High Spend,Quarterly,Old,Low LI,Very Low Tenure,High UF,Female,Standard
+High Issues,Low Delay,High Spend,Monthly,Old,Low LI,High Tenure,High UF,Female,Premium
+Low Issues,High Delay,High Spend,Quarterly,Old,Low LI,Very Low Tenure,Low UF,Male,Basic
+Low Issues,Medium Delay,High Spend,Annual,Old,Low LI,High Tenure,Low UF,Female,Premium
+Low Issues,Low Delay,High Spend,Quarterly,Old,Low LI,Low Tenure,Low UF,Female,Standard
+Low Issues,Medium Delay,High Spend,Annual,Young Adult,High LI,High Tenure,High UF,Male,Premium
+Low Issues,Low Delay,High Spend,Quarterly,Young Adult,High LI,High Tenure,High UF,Male,Basic
+High Issues,Medium Delay,High Spend,Annual,Old,Low LI,Medium Tenure,High UF,Female,Premium
+High Issues,High Delay,Low Spend,Monthly,Young Adult,High LI,Very Low Tenure,High UF,Male,Premium
+High Issues,Medium Delay,Low Spend,Monthly,Old Adult,High LI,High Tenure,High UF,Male,Premium
+Low Issues,High Delay,Low Spend,Annual,Old,Low LI,High Tenure,High UF,Male,Premium
+Low Issues,Low Delay,High Spend,Annual,Old,Low LI,High Tenure,Low UF,Female,Basic
+Medium Issues,Low Delay,High Spend,Monthly,Old,Low LI,Medium Tenure,High UF,Female,Premium
+Medium Issues,High Delay,High Spend,Annual,Young Adult,High LI,High Tenure,High UF,Female,Basic
+Medium Issues,High Delay,High Spend,Quarterly,Old,High LI,High Tenure,Low UF,Male,Premium
+Medium Issues,Low Delay,High Spend,Quarterly,Old Adult,Low LI,Medium Tenure,High UF,Female,Basic
+Medium Issues,Low Delay,High Spend,Annual,Old,Low LI,Medium Tenure,High UF,Male,Standard
+High Issues,High Delay,High Spend,Annual,Old Adult,High LI,High Tenure,High UF,Male,Premium
+Low Issues,Low Delay,High Spend,Quarterly,Old,High LI,High Tenure,Low UF,Male,Basic
+High Issues,Low Delay,High Spend,Annual,Old,High LI,Low Tenure,High UF,Male,Basic
+Medium Issues,Low Delay,High Spend,Annual,Old,High LI,High Tenure,Low UF,Male,Basic
+Low Issues,High Delay,High Spend,Annual,Old,High LI,High Tenure,Low UF,Female,Basic
+High Issues,High Delay,High Spend,Quarterly,Old,High LI,High Tenure,Low UF,Male,Premium
+Low Issues,Low Delay,High Spend,Annual,Old,High LI,Very Low Tenure,High UF,Female,Premium
+Low Issues,Low Delay,High Spend,Annual,Old Adult,High LI,High Tenure,High UF,Male,Standard
+High Issues,High Delay,Low Spend,Annual,Old,Low LI,High Tenure,High UF,Male,Standard
+High Issues,Low Delay,High Spend,Annual,Young Adult,Low LI,High Tenure,Low UF,Male,Basic
+Low Issues,Low Delay,High Spend,Annual,Old Adult,Low LI,High Tenure,High UF,Male,Basic
+High Issues,High Delay,Low Spend,Annual,Old,Low LI,High Tenure,Low UF,Female,Standard
+Medium Issues,Low Delay,High Spend,Annual,Young Adult,High LI,High Tenure,High UF,Female,Standard
+Low Issues,Low Delay,High Spend,Quarterly,Old Adult,High LI,Low Tenure,High UF,Male,Basic
+Low Issues,Low Delay,High Spend,Quarterly,Young Adult,Low LI,Medium Tenure,High UF,Male,Basic
+Medium Issues,Low Delay,High Spend,Annual,Old,High LI,High Tenure,Low UF,Male,Standard
+High Issues,Medium Delay,High Spend,Monthly,Old Adult,Low LI,Low Tenure,Low UF,Male,Standard
+Low Issues,Medium Delay,High Spend,Annual,Old Adult,Low LI,High Tenure,Low UF,Male,Premium
+High Issues,High Delay,Low Spend,Annual,Old,Low LI,High Tenure,High UF,Female,Basic
+Medium Issues,Medium Delay,High Spend,Quarterly,Old Adult,Low LI,High Tenure,Low UF,Male,Premium
+Low Issues,High Delay,High Spend,Monthly,Young Adult,Low LI,High Tenure,High UF,Female,Standard
+Low Issues,Medium Delay,Low Spend,Annual,Young Adult,Low LI,High Tenure,High UF,Female,Basic
+Low Issues,High Delay,High Spend,Annual,Old,Low LI,High Tenure,High UF,Male,Basic
+Medium Issues,Low Delay,High Spend,Quarterly,Old,High LI,High Tenure,High UF,Male,Basic
+Medium Issues,High Delay,High Spend,Annual,Old,Low LI,High Tenure,High UF,Female,Basic
+Low Issues,Low Delay,High Spend,Annual,Old Adult,Low LI,High Tenure,Low UF,Male,Premium
+High Issues,Low Delay,Low Spend,Quarterly,Young Adult,High LI,High Tenure,High UF,Female,Premium
+Low Issues,Low Delay,High Spend,Quarterly,Old,High LI,Medium Tenure,High UF,Male,Basic
+High Issues,Medium Delay,Low Spend,Monthly,Old,High LI,High Tenure,Low UF,Female,Premium
+Low Issues,Low Delay,High Spend,Annual,Old,High LI,High Tenure,High UF,Male,Premium
+Low Issues,Low Delay,High Spend,Annual,Old Adult,High LI,High Tenure,High UF,Male,Premium
+High Issues,Low Delay,High Spend,Quarterly,Old,Low LI,High Tenure,High UF,Male,Standard
+High Issues,High Delay,High Spend,Quarterly,Young Adult,Low LI,High Tenure,High UF,Female,Standard
+High Issues,Medium Delay,High Spend,Quarterly,Old,Low LI,High Tenure,High UF,Male,Standard
+Low Issues,Low Delay,High Spend,Quarterly,Old Adult,Low LI,Medium Tenure,High UF,Male,Standard
+Medium Issues,Low Delay,High Spend,Annual,Old,Low LI,High Tenure,Low UF,Male,Premium
+High Issues,High Delay,Low Spend,Annual,Old Adult,Low LI,High Tenure,High UF,Female,Standard
+Low Issues,Medium Delay,Low Spend,Quarterly,Old Adult,High LI,High Tenure,High UF,Male,Basic
+High Issues,Low Delay,High Spend,Annual,Old,Low LI,High Tenure,High UF,Male,Basic
+Low Issues,Low Delay,High Spend,Quarterly,Old Adult,Low LI,High Tenure,Low UF,Male,Premium
+High Issues,Low Delay,High Spend,Quarterly,Old,High LI,High Tenure,High UF,Male,Basic
+Low Issues,Low Delay,High Spend,Annual,Young Adult,Low LI,High Tenure,High UF,Male,Standard
+Low Issues,Low Delay,High Spend,Annual,Old,High LI,High Tenure,High UF,Male,Basic
+Low Issues,Low Delay,High Spend,Quarterly,Old Adult,High LI,High Tenure,High UF,Male,Premium
+High Issues,Low Delay,Low Spend,Annual,Old Adult,High LI,High Tenure,Low UF,Male,Standard
+Medium Issues,Medium Delay,Low Spend,Annual,Old Adult,Low LI,High Tenure,High UF,Male,Basic
+High Issues,Low Delay,High Spend,Quarterly,Old,Low LI,High Tenure,High UF,Female,Basic
+Medium Issues,Low Delay,Low Spend,Annual,Old Adult,High LI,High Tenure,Low UF,Female,Premium
+Low Issues,High Delay,Low Spend,Monthly,Old,High LI,High Tenure,High UF,Male,Basic
+Low Issues,Medium Delay,High Spend,Quarterly,Old Adult,Low LI,High Tenure,High UF,Female,Premium
+Medium Issues,High Delay,High Spend,Quarterly,Old,High LI,High Tenure,High UF,Male,Premium
+Low Issues,Low Delay,High Spend,Monthly,Very Young,High LI,Medium Tenure,High UF,Female,Standard
+Low Issues,Medium Delay,High Spend,Quarterly,Old,Low LI,High Tenure,High UF,Female,Standard
+Medium Issues,High Delay,Low Spend,Quarterly,Old,Low LI,High Tenure,High UF,Female,Standard
+High Issues,Low Delay,High Spend,Quarterly,Old Adult,Low LI,High Tenure,High UF,Male,Basic
+Low Issues,Low Delay,High Spend,Quarterly,Old,Low LI,High Tenure,High UF,Male,Premium
+Low Issues,Low Delay,High Spend,Annual,Old Adult,Low LI,High Tenure,High UF,Male,Premium
+Low Issues,Medium Delay,High Spend,Quarterly,Young Adult,Low LI,High Tenure,Low UF,Female,Premium
+Medium Issues,Medium Delay,High Spend,Quarterly,Old,High LI,High Tenure,High UF,Male,Standard
+Medium Issues,High Delay,High Spend,Annual,Old,Low LI,High Tenure,Low UF,Female,Basic
+Medium Issues,Low Delay,High Spend,Annual,Old Adult,Low LI,Low Tenure,High UF,Female,Basic
+High Issues,High Delay,High Spend,Quarterly,Old,High LI,High Tenure,Low UF,Male,Premium
+Low Issues,Low Delay,Low Spend,Quarterly,Old,High LI,Medium Tenure,Low UF,Male,Standard
+Low Issues,Low Delay,High Spend,Annual,Old Adult,Low LI,High Tenure,High UF,Male,Standard
