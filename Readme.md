@@ -345,6 +345,13 @@ Google Cloud Run was selected because it satisfies the deployment requirements o
 
 > **Technology Decision:** Google Cloud Run was selected because it provides the required production capabilities with minimal infrastructure management. Render offers simpler hosting but fewer regional and scaling options, while AWS provides similar capabilities with greater operational complexity for the current project scope.
 
+**Deployment Note**
+
+The application was initially prepared for deployment on **Google Cloud Platform (Compute Engine)** using Docker Compose. During deployment, Google Cloud required a prepaid billing setup for Compute Engine, which exceeded the project budget allocated for this academic project.
+
+To keep the project publicly accessible while staying within budget constraints, the deployment target was shifted to **Render**, where the same Dockerized application architecture is deployed.
+
+
 **Detailed Comparison:** [`Technology_Choices/05_Cloud_Service_Choice.md`](Technology_Choices/05_Cloud_Service_Choice.md#cloud-platform-choice)
 
 ## Architecture Choice

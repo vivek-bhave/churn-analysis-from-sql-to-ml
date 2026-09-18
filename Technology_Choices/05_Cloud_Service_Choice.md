@@ -93,3 +93,9 @@ Google Cloud Run was preferred over Render and AWS for the following reasons:
 - **Operational Overhead:** Provides serverless deployment with minimal infrastructure configuration.
 
 Render is a good option for simple application hosting but offers fewer scaling and regional deployment options for this project. AWS satisfies all deployment requirements but introduces additional operational complexity that is unnecessary for the current monolithic Decision Support System.
+
+**Deployment Note**
+
+The application was initially prepared for deployment on **Google Cloud Platform (Compute Engine)** using Docker Compose. During deployment, Google Cloud required a prepaid billing setup for Compute Engine, which exceeded the project budget allocated for this academic project.
+
+To keep the project publicly accessible while staying within budget constraints, the deployment target was shifted to **Render**, where the same Dockerized application architecture is deployed.
