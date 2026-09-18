@@ -1,0 +1,57 @@
+services:
+  # ==========================================
+  # MariaDB Database (Private Service)
+  # ==========================================
+  - type: pserv
+    name: churn-database
+    env: docker
+    image:
+      url: mariadb:11
+
+    envVars:
+      - key: MARIADB_ROOT_PASSWORD
+        value: root123
+      - key: MARIADB_DATABASE
+        value: churn_db
+      - key: MARIADB_USER
+        value: vivek
+      - key: MARIADB_PASSWORD
+        value: password123
+
+    disk:
+      name: mariadb-data
+      mountPath: /var/lib/mysql
+      sizeGB: 1
+
+  # ==========================================
+  # FastAPI Backend
+  # ==========================================
+  - type: web
+    name: customer-engagement-backend
+    env: docker
+    dockerfilePath: ./Dockerfile.app
+
+    envVars:
+      - key: DB_HOST
+        value: churn-database
+      - key: DB_NAME
+        value: churn_db
+      - key: DB_USER
+        value: vivek
+      - key: DB_PASSWORD
+        value: password123
+
+  # ==========================================
+  # Streamlit Frontend
+  # ==========================================
+  - type: web
+    name: customer-engagement-frontend
+    env: docker
+    dockerfilePath: ./Dockerfile.streamlit
+
+    envVars:
+      - key: API_URL
+        fromService:
+          type: web
+          name: customer-engagement-backend
+          property: host

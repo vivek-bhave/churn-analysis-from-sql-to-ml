@@ -1,5 +1,7 @@
 import mysql.connector
 from collections import defaultdict
+import os
+
 
 
 # --------------------------------------------------
@@ -8,10 +10,10 @@ from collections import defaultdict
 
 def get_connection():
     return mysql.connector.connect(
-        host="database",
-        user="vivek",
-        password="password123",
-        database="churn_db"
+        host=os.getenv("DB_HOST", "database"),
+        user=os.getenv("DB_USER", "vivek"),
+        password=os.getenv("DB_PASSWORD", "password123"),
+        database=os.getenv("DB_NAME", "churn_db")
     )
 
 

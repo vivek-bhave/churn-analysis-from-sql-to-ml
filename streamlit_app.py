@@ -1,10 +1,13 @@
 import streamlit as st
 import requests
+import os
+
 
 # ----------------------------------------------------
 # FastAPI Backend
 # ----------------------------------------------------
-API_URL = "http://backend:8000/predict"
+BACKEND_HOST = os.getenv("API_URL", "http://backend:8000")
+API_URL = f"{BACKEND_HOST}/predict"
 
 st.set_page_config(
     page_title="Real-Time Customer Engagement Decision Support System",
