@@ -96,6 +96,10 @@ Render is a good option for simple application hosting but offers fewer scaling 
 
 **Deployment Note**
 
-The application was initially prepared for deployment on **Google Cloud Platform (Compute Engine)** using Docker Compose. During deployment, Google Cloud required a prepaid billing setup for Compute Engine, which exceeded the project budget allocated for this academic project.
+The application was initially planned for deployment on **Google Cloud Platform (Compute Engine)** using a Docker-based architecture. However, deployment on Google Cloud required enabling a prepaid billing account for Compute Engine, which was not feasible within the budget constraints of this academic project.
 
-To keep the project publicly accessible while staying within budget constraints, the deployment target was shifted to **Render**, where the same Dockerized application architecture is deployed.
+An alternative deployment platform, **Render**, was also evaluated. However, its deployment process required payment registration through a supported credit card, which was unavailable for this project.
+
+To ensure the application could still be deployed and demonstrated within the available resources, the deployment was migrated to **Amazon Web Services (AWS)**.
+
+AWS satisfies all the functional and non-functional deployment requirements originally identified for Google Cloud Platform, including Docker-based container deployment, REST API hosting, networking, horizontal scalability, high availability, and low-latency deployment through the **Mumbai (`ap-south-1`) region**. Although AWS introduces higher operational and configuration overhead than Google Cloud Run/Compute Engine, it provides the same required deployment capabilities and remains a production-grade cloud platform for the application's containerized microservices architecture. Therefore, AWS was selected as the final deployment platform while preserving the original Docker-based deployment workflow.

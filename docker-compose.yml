@@ -14,8 +14,7 @@ services:
       MARIADB_USER: vivek
       MARIADB_PASSWORD: password123
 
-    ports:
-      - "3306:3306"
+    
 
     volumes:
       - mariadb_data:/var/lib/mysql
@@ -36,8 +35,7 @@ services:
     ports:
       - "8000:8000"
 
-    volumes:
-      - .:/app
+    
 
   frontend:
     build:
@@ -54,8 +52,7 @@ services:
     ports:
       - "8501:8501"
 
-    volumes:
-      - .:/app
+    
 
 volumes:
   mariadb_data:

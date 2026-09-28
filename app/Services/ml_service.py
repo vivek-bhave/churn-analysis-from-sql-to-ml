@@ -3,8 +3,8 @@ from fastapi.responses import JSONResponse
 import pandas as pd
 from joblib import load
 from pathlib import Path
-
-from app.main import PredictionRequest, HighValueCustomerLossInput
+from fastapi.middleware.cors import CORSMiddleware
+from app.main import PredictionRequest, CustomerInput
 
 from app.Services.shap_service import (
     explain_logistic,
@@ -25,26 +25,36 @@ xg_model = load(MODEL_DIR / "xgboost_pipeline.joblib")
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # We'll tighten this later if needed.
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # --------------------------------------------------
 # Business Value Routing
 # --------------------------------------------------
 
 def business_value(data):
-    """
-    High Business Value:
-    - High Spend
-    - Annual / Quarterly Contract
 
-    Everything else is Low Business Value.
-    """
-
+    # High-value customers
     if (
         data.spend_level == "High Spend"
         and data.Contract_Length in ["Annual", "Quarterly"]
     ):
         return "High Business Value"
 
+    # Medium-value customers
+    elif (
+        data.spend_level == "High Spend"
+        or data.Contract_Length in ["Annual", "Quarterly"]
+    ):
+        return "Medium Business Value"
+
+    # Low-value customers
     return "Low Business Value"
 
 
@@ -57,7 +67,7 @@ def predict(request: PredictionRequest):
 
     # Frontend always sends high_value_customer_loss
     client_type = request.client_type
-    data = HighValueCustomerLossInput(**request.data)
+    data = CustomerInput(**request.data)
 
     customer_value = business_value(data)
 

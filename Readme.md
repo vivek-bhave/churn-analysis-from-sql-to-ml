@@ -345,11 +345,15 @@ Google Cloud Run was selected because it satisfies the deployment requirements o
 
 > **Technology Decision:** Google Cloud Run was selected because it provides the required production capabilities with minimal infrastructure management. Render offers simpler hosting but fewer regional and scaling options, while AWS provides similar capabilities with greater operational complexity for the current project scope.
 
-**Deployment Note**
+### Deployment Note
 
-The application was initially prepared for deployment on **Google Cloud Platform (Compute Engine)** using Docker Compose. During deployment, Google Cloud required a prepaid billing setup for Compute Engine, which exceeded the project budget allocated for this academic project.
+The application was initially planned for deployment on **Google Cloud Platform (Compute Engine)** using a Docker-based architecture. However, deployment on Google Cloud required enabling a prepaid billing account for Compute Engine, which was not feasible within the budget constraints of this academic project.
 
-To keep the project publicly accessible while staying within budget constraints, the deployment target was shifted to **Render**, where the same Dockerized application architecture is deployed.
+An alternative deployment platform, **Render**, was also evaluated. However, its deployment process required payment registration through a supported credit card, which was unavailable for this project.
+
+To ensure the application could still be deployed and demonstrated within the available resources, the deployment was migrated to **Amazon Web Services (AWS)**.
+
+AWS satisfies all the functional and non-functional deployment requirements originally identified for Google Cloud Platform, including Docker-based container deployment, REST API hosting, networking, horizontal scalability, high availability, and low-latency deployment through the **Mumbai (`ap-south-1`) region**. Although AWS introduces higher operational and configuration overhead than Google Cloud Run/Compute Engine, it provides the same required deployment capabilities and remains a production-grade cloud platform for the application's containerized microservices architecture. Therefore, AWS was selected as the final deployment platform while preserving the original Docker-based deployment workflow.
 
 
 **Detailed Comparison:** [`Technology_Choices/05_Cloud_Service_Choice.md`](Technology_Choices/05_Cloud_Service_Choice.md#cloud-platform-choice)
@@ -376,3 +380,98 @@ A monolithic architecture was selected because it satisfies the functional requi
 > **Technology Decision:** Monolithic architecture was selected because every customer request currently follows the same processing pipeline through the ML Prediction, SHAP, and Recommendation services, making a single deployment unit the simplest and most efficient design. Microservices provide better failure isolation and independent scaling, but those advantages are not required for the current scope of the Decision Support System.
 
 **Detailed Comparison:** [`Technology_Choices/06_Architecture_Choice.md`](Technology_Choices/06_Architecture_Choice.md#architecture-choice)
+
+### Streamlit + FastAPI Architecture Choice
+
+**Possible Options**
+
+- Streamlit Only
+- **Streamlit + FastAPI** *(Selected)*
+
+**Selected Architecture:** **Streamlit + FastAPI**
+
+The application architecture separates the presentation layer from the backend application layer. Streamlit is used to build the interactive dashboard, while FastAPI exposes the machine learning prediction, SHAP explanation, recommendation engine, and database operations through reusable REST APIs.
+
+**Evaluation Factors**
+
+- Functional Requirement Support
+- Asynchronous Processing
+- Scalability Across Multiple Clients
+- Fault Tolerance
+- Code Maintainability
+- Operational Complexity
+
+> **Technology Decision:** Streamlit + FastAPI was selected because it provides a modular architecture with asynchronous request handling, reusable backend APIs, better fault isolation, and improved maintainability. Although a Streamlit-only application has lower operational complexity, separating the frontend and backend better supports the long-term design of the Decision Support System.
+
+**Detailed Comparison:** [`Technology_Choices/07_Streamlit_VS_Fastapi+Streamlit_Choice.md`](Technology_Choices/07_Streamlit_VS_Fastapi+Streamlit_Choice.md#streamlit--fastapi-architecture-choice)
+
+
+## Backend Design
+
+The backend is implemented as a **FastAPI-based monolithic architecture** that orchestrates the complete decision support pipeline for customer churn prediction. A single API request flows through request validation, feature engineering, machine learning inference, explainability, business rule execution, role-based recommendation filtering, and unified response construction.
+
+The backend processing pipeline consists of six stages:
+
+1. Request Validation
+2. Machine Learning Prediction Logic
+3. SHAP Explainability Logic
+4. Recommendation Engine Logic
+5. Role-Based Decision Logic
+6. Response Construction
+
+---
+
+### 1. Request Validation
+
+The Request Validation layer is the entry point of the backend. It uses **Pydantic** to validate incoming customer data, enforce numerical and categorical constraints, and automatically generate engineered business features required throughout the prediction pipeline. This ensures that invalid requests are rejected before model inference and that every downstream component receives a standardized customer representation.
+
+**📄 Detailed Documentation:** [Request Validation](Backend_Design/01_Request_Validation.md)
+
+---
+
+### 2. Machine Learning Prediction Logic
+
+The Machine Learning Prediction layer executes the core inference pipeline of the Decision Support System. The backend first classifies the customer's business value (**High, Medium, or Low**) and then executes **XGBoost** and **Logistic Regression** in parallel. XGBoost is used to identify customers with a high likelihood of churn, while Logistic Regression estimates customer retention probability. The selected model is then passed to the SHAP Explainability Service before constructing a unified API response.
+
+**📄 Detailed Documentation:** [Machine Learning Prediction Logic](Backend_Design/02_ml_service_logic.md)
+
+### 3. SHAP Explainability Service
+
+The SHAP Explainability Service explains **why** a customer was predicted to churn or remain with the service by identifying the contribution of each customer feature. The backend initializes separate SHAP explainers for **XGBoost (TreeExplainer)** and **Logistic Regression (LinearExplainer)** and automatically selects the appropriate explainer based on the prediction pipeline.
+
+To improve real-time interpretability, SHAP values generated for **one-hot encoded features** are aggregated back into their original business features (such as *Issue Level* or *Contract Length*) by summing their contributions. The backend also converts these aggregated SHAP values into **relative contribution percentages**, allowing support staff and managers to quickly understand which customer characteristics contributed most to the churn prediction.
+
+**📄 Detailed Documentation:** [SHAP Explainability Service](Backend_Design/03_shap_service_logic.md)
+
+### 4. Churn Database Logic
+
+The Churn Database is designed around a **behavioural customer profile** instead of storing recommendations for every individual customer. Customer features are divided into **customer profile features** (Spend Level, Contract Length, Tenure Level), which determine the cost and priority of retention strategies, and **customer behaviour features** (Issue Level, Delay Level), which determine whether the customer requires proactive or reactive intervention.
+
+The database maps combinations of these engineered features to predefined recommendation rules, creating an interpretable and easily extensible rule-based retention system. The behavioural features were selected through SQL-based customer behaviour analysis to capture the customer characteristics most strongly associated with churn.
+
+**📄 Detailed Documentation:** [Churn Database Logic](Backend_Design/04_churn_database_design.md)
+
+### 5. Recommendation Engine Logic
+
+The Recommendation Engine converts the engineered customer profile into **actionable retention strategies** using a rule-based decision system backed by **MariaDB**. It matches customer behaviour with predefined recommendation rules, retrieves the corresponding retention actions, applies **role-based access control (RBAC)** for different client types, and organizes recommendations into business-friendly categories sorted by service priority and implementation cost.
+
+This design keeps business rules independent from machine learning models, making the recommendation system deterministic, interpretable, and easy to extend without modifying backend prediction logic.
+
+**📄 Detailed Documentation:** [Recommendation Engine Logic](Backend_Design/05_Recommendation_engine_logic.md)
+
+## Deployment Choices
+
+### VPC Architecture Choices
+
+The Churn DSS application is deployed inside a dedicated **Virtual Private Cloud (VPC)** to provide an isolated and scalable network environment. For Version 1, the architecture uses **one Availability Zone**, **one public subnet**, **no private subnets**, and **no NAT Gateway** to keep the deployment simple while leaving room for future production scaling with multiple Availability Zones, load balancers, and private backend services.
+
+**Detailed documentation:** [01_VPC_Architecture_Choices.md](Deployment_Choices/01_VPC_Architecture_Choices.md)
+
+
+### EC2 Deployment Choices
+
+The Churn DSS application is deployed on a **single Amazon EC2 instance** running **Ubuntu Server 24.04 LTS** with the **64-bit x86 architecture**. The deployment uses a **t3.small** instance (2 vCPUs, 2 GB RAM) to provide enough resources for the frontend, FastAPI backend, and MariaDB containers while keeping the infrastructure cost-effective. The EC2 instance is secured using an **SSH key pair**, a dedicated **Security Group** with SSH access restricted to the developer's IP, and a **20 GB gp3 EBS volume** for persistent application and database storage.
+
+**Detailed documentation:** [02_EC2_Choices.md](Deployment_Choices/02_EC2_Choices.md)
+
+

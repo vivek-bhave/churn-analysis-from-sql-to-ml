@@ -39,11 +39,15 @@ def customer_business_value(result):
 
     value = result["business_value"]
 
-    col1, col2 = st.columns([2,3])
+    col1, col2 = st.columns([2, 3])
 
     with col1:
         if value == "High Business Value":
             st.success("### HIGH BUSINESS VALUE")
+
+        elif value == "Medium Business Value":
+            st.info("### MEDIUM BUSINESS VALUE")
+
         else:
             st.warning("### LOW BUSINESS VALUE")
 
@@ -53,6 +57,11 @@ def customer_business_value(result):
         if value == "High Business Value":
             st.markdown("- 🟢 High Spend")
             st.markdown("- 🟢 Annual / Quarterly Contract")
+
+        elif value == "Medium Business Value":
+            st.markdown("- 🔵 High Spend **or** Annual / Quarterly Contract")
+            st.markdown("- 🔵 Meets one high-value business criterion")
+
         else:
             st.markdown("- 🟡 Low Spend")
             st.markdown("- 🟡 Monthly Contract")
@@ -313,7 +322,6 @@ if submitted:
 
     payload = {
         "client_type": client_type,
-        "problem": "high_value_customer_loss",
         "data": {
             "Age": age,
             "Gender": gender,

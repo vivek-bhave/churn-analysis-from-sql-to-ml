@@ -38,3 +38,6 @@ ENV/
 # Environment variables
 .env
 .env.local
+# AWS SSH Keys (Never upload to GitHub)
+.ssh/
+*.pem
