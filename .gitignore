@@ -41,3 +41,5 @@ ENV/
 # AWS SSH Keys (Never upload to GitHub)
 .ssh/
 *.pem
+# LibreOffice lock files
+.~lock.*
