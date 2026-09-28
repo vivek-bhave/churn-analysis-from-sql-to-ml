@@ -1,7 +1,6 @@
 version: "3.9"
 
 services:
-
   database:
     image: mariadb:11
     container_name: churn_database
@@ -9,14 +8,13 @@ services:
     restart: always
 
     env_file:
-    - .env
+      - .env
 
     environment:
-    MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
-    MARIADB_DATABASE: ${MARIADB_DATABASE}
-    MARIADB_USER: ${MARIADB_USER}
-    MARIADB_PASSWORD: ${MARIADB_PASSWORD}
-    
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
 
     volumes:
       - mariadb_data:/var/lib/mysql
@@ -36,7 +34,7 @@ services:
 
     ports:
       - "8000:8000"
-      
+
     env_file:
     - .env
 
