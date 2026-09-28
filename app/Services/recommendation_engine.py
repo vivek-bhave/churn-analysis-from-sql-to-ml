@@ -50,18 +50,18 @@ def find_matching_rule(
         tenure_group = "Non-High"
 
     query = """
-        SELECT *
-        FROM recommendation_rules
-        WHERE delay_level = %s
-          AND issue_level = %s
-          AND contract_length = %s
-          AND spend_level = %s
-          AND (
-                tenure_level = 'Any'
-                OR tenure_level = %s
-              )
-        LIMIT 1;
-    """
+    SELECT *
+    FROM recommendation_rules
+    WHERE payment_delay = %s
+      AND support_calls = %s
+      AND contract_length = %s
+      AND spend_level = %s
+      AND (
+            tenure_level = 'Any'
+            OR tenure_level = %s
+          )
+    LIMIT 1;
+"""
 
     cursor.execute(query, (
         delay_db,
